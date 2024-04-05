@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "217297391980",
+    "project_id": "login-register-sysmeet",
+    "storage_bucket": "login-register-sysmeet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217297391980:android:3aa73cb67bb5a72687a349",
+        "android_client_info": {
+          "package_name": "com.example.sysmeet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1jCkjV9X-rW_AAuCK0HstnmlGpV_H0TQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
