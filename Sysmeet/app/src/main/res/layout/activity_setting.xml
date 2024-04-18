@@ -87,6 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Setting"
+        android:textColor="#407c87"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,6 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Color"
+        android:textColor="#407c87"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +121,7 @@
         app:layout_constraintVertical_bias="0.214" />
 
     <View
-        android:id="@+id/divider1"
+        android:id="@+id/divider2"
         android:layout_width="wrap_content"
         android:layout_height="5dp"
         android:background="?android:attr/listDivider"
@@ -136,6 +138,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Language"
+        android:textColor="#407c87"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -166,24 +169,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.537" />
 
-    <View
-        android:id="@+id/divider6"
-        android:layout_width="wrap_content"
-        android:layout_height="5dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
-
     <Button
         android:id="@+id/buttonAbout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:text="About"
+        android:textColor="#407c87"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -208,10 +200,12 @@
         android:layout_marginStart="20dp"
         android:text="New post"
         android:textAlignment="textStart"
+        android:textColor="#407c87"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444" />
+        app:layout_constraintVertical_bias="0.444"
+        tools:checked="false" />
 
     <Switch
         android:id="@+id/switchSchedule"
@@ -219,6 +213,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:text="Schedule update"
+        android:textColor="#407c87"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -241,6 +236,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Notification"
+        android:textColor="#407c87"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -253,6 +249,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Theme"
+        android:textColor="#407c87"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -260,7 +257,7 @@
         app:layout_constraintVertical_bias="0.141" />
 
     <View
-        android:id="@+id/divider2"
+        android:id="@+id/divider1"
         android:layout_width="wrap_content"
         android:layout_height="5dp"
         android:background="?android:attr/listDivider"
@@ -269,5 +266,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.118" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
