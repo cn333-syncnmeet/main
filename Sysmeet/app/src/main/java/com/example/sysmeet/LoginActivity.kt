@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
                 firebaseAuth.signInWithEmailAndPassword(email, pass)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            val intent = Intent(this, SignUpActivity::class.java)
+                            val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
                         } else {
                             Toast.makeText(this, task.exception?.toString(), Toast.LENGTH_SHORT).show()
@@ -48,7 +48,9 @@ class LoginActivity : AppCompatActivity() {
     }
     override fun onStart() {
         super.onStart()
-        if (this::firebaseAuth.isInitialized && firebaseAuth.currentUser != null && this::javaClass.name == LoginActivity::class.java.name) {
+        firebaseAuth = FirebaseAuth.getInstance() // อย่าลืมกำหนด firebaseAuth ให้ตัวแปรก่อนใช้งาน
+
+        if (firebaseAuth.currentUser != null && javaClass.name == LoginActivity::class.java.name) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
