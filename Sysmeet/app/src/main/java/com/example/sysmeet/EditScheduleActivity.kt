@@ -30,7 +30,6 @@ class EditScheduleActivity : AppCompatActivity() {
         saveButton.setOnClickListener {
 
             val selectedDay = daySpinner.selectedItem.toString()
-
             val startTime = startTimeEditText.selectedItem.toString()
             val endTime = endTimeEditText.selectedItem.toString()
 
