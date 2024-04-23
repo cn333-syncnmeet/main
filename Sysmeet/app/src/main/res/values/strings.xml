@@ -90,4 +90,12 @@
         <item>23:00</item>
     </string-array>
 
+    <string name="title_activity_upload_profile">Upload_Profile_Activity</string>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
 </resources>
