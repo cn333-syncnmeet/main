@@ -35,24 +35,24 @@
         android:layout_gravity="start|top"
         android:layout_marginStart="10dp"
         android:layout_marginTop="85dp"
-        android:backgroundTint="@color/B1"
+        android:backgroundTint="@color/B2"
         android:src="@drawable/baseline_add_24"
-        app:tint="@color/white" />
+        app:tint="@color/black" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:background="#407C87" />
+        android:background="@color/B2" />
 
     <TextView
         android:id="@+id/textSetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start|top"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="15dp"
         android:text="Group"
-        android:textColor="#EEF1F6"
+        android:textColor="@color/B1"
         android:textSize="34sp" />
 
 
@@ -63,15 +63,21 @@
         android:layout_gravity="start|top"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:backgroundTint="@color/B1"
-        android:src="@drawable/baseline_add_24"
-        app:tint="@color/white" />
+        android:backgroundTint="@color/B2"
+        android:src="@drawable/icons8_search"
+        app:tint="@color/black" />
 
     <View
         android:layout_width="75dp"
         android:layout_height="match_parent"
-        android:background="#A5DBDD" />
+        android:background="@color/B1" />
 
-
+    <View
+        android:layout_width="50dp"
+        android:layout_height="5dp"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="12.5dp"
+        android:layout_marginTop="75dp"
+        android:background="@color/B2" />
 
 </FrameLayout>

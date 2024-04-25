@@ -11,7 +11,7 @@ tools:context=".HomeFragment">
     <View
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:background="#407C87" />
+        android:background="@color/B2" />
 
     <TextView
         android:id="@+id/textSetting"
@@ -21,7 +21,7 @@ tools:context=".HomeFragment">
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:text="@string/Profile"
-        android:textColor="#EEF1F6"
+        android:textColor="@color/B1"
         android:textSize="34sp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -31,8 +31,8 @@ tools:context=".HomeFragment">
         android:layout_gravity="start|top"
         android:layout_marginStart="125dp"
         android:layout_marginTop="10dp"
-        android:backgroundTint="@color/B2"
-        android:src="@drawable/baseline_add_24"
+        android:backgroundTint="@color/B1"
+        android:src="@drawable/edit"
         app:tint="@color/white">
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
@@ -43,9 +43,9 @@ tools:context=".HomeFragment">
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="start|top"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="75dp"
-        android:src="@drawable/baseline_3p_24" />
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/profile" />
 
     <TextView
         android:id="@+id/textName"
@@ -53,7 +53,7 @@ tools:context=".HomeFragment">
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="250dp"
         android:text="Name"
         android:textSize="24sp"/>
 
@@ -64,7 +64,7 @@ tools:context=".HomeFragment">
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="225dp"
+        android:layout_marginTop="300dp"
         android:text="Gender"
         android:textSize="18sp"/>
 
@@ -75,7 +75,7 @@ tools:context=".HomeFragment">
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="350dp"
         android:text="Age"
         android:textSize="18sp"/>
 
@@ -86,7 +86,7 @@ tools:context=".HomeFragment">
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="275dp"
+        android:layout_marginTop="400dp"
         android:hint="Other Information" />
 
 
