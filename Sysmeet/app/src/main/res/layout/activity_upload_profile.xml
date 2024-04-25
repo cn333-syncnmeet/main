@@ -26,8 +26,8 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/baseline_3p_24"
-        tools:layout_editor_absoluteX="5dp"
+        android:src="@drawable/profile"
+        tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="76dp"
         tools:ignore="MissingConstraints" />
 
@@ -46,10 +46,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Select Image"
+        android:text="+"
         android:backgroundTint="#407C87"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="101dp"
+        tools:layout_editor_absoluteX="275dp"
+        tools:layout_editor_absoluteY="150dp"
         tools:ignore="MissingConstraints" />
 
     <EditText

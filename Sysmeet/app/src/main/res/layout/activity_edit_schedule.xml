@@ -6,6 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".EditScheduleActivity">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/B2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Schedule"
+        android:textColor="@color/B1"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    
+
     <Spinner
         android:id="@+id/daySpinner"
         android:layout_width="wrap_content"
@@ -52,11 +74,13 @@
         android:layout_below="@id/endTimeEditText"
         android:layout_marginTop="592dp"
         android:text="Save"
-        android:backgroundTint="#407C87"
+        android:backgroundTint="@color/B1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

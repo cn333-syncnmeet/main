@@ -12,18 +12,15 @@
         android:background="@color/B2" />
 
     <TextView
-        android:id="@+id/textSetting"
+        android:id="@+id/textSchedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Schedule"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Schedule"
         android:textColor="@color/B1"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        android:textSize="34sp" />
 
     <TableLayout
         android:layout_width="match_parent"
