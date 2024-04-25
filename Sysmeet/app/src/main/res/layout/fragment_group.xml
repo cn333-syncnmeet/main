@@ -1,14 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GroupFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/group_bottom_navigation"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="75dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/group_bottom_nav_menu"
+        tools:ignore="MissingConstraints" />
+
+    <FrameLayout
+        android:id="@+id/menu_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="160dp"
+        app:layout_constraintBottom_toTopOf="@id/group_bottom_navigation" >
+
+    </FrameLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="85dp"
+        android:backgroundTint="@color/B1"
+        android:src="@drawable/baseline_add_24"
+        app:tint="@color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#407C87" />
+
+    <TextView
+        android:id="@+id/textSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="10dp"
+        android:text="Group"
+        android:textColor="#EEF1F6"
+        android:textSize="34sp" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/B1"
+        android:src="@drawable/baseline_add_24"
+        app:tint="@color/white" />
+
+    <View
+        android:layout_width="75dp"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="#A5DBDD" />
+
+
 
 </FrameLayout>

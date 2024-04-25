@@ -6,12 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ScheduleFragment">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#407C87" />
+
     <TextView
         android:id="@+id/textSetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Schedule"
-        android:textColor="#407c87"
+        android:textColor="#EEF1F6"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +28,9 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="50dp">
+        android:layout_marginTop="75dp">
+
+
         <!-- Table header for days of the week -->
         <TableRow android:layout_width="wrap_content">
 
@@ -312,9 +319,9 @@
         android:id="@+id/editButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit Schedule"
+        android:text="Edit"
         android:backgroundTint="#407C87"
         android:layout_gravity="bottom|end"
-        android:layout_margin="50dp" />
+         />
 
 </FrameLayout>
