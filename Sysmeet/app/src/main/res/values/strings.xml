@@ -6,6 +6,30 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <!-- for setting page -->
+    <!-- english -->
+    <string name="Setting_English">Setting</string>
+    <string name="SetColor_English">Set Color</string>
+    <string name="Color_English">Color</string>
+    <string name="Language_English">Language</string>
+    <string name="About_English">About</string>
+    <string name="NewPost_English">New post</string>
+    <string name="ScheduleUpdate_English">Schedule update</string>
+    <string name="Logout_English">Logout</string>
+    <string name="Notification_English">Notification</string>
+    <string name="Theme_English">Theme</string>
+    <!-- thai -->
+    <string name="Setting_Thai">การตั้งค่า</string>
+    <string name="SetColor_Thai">กำหนดสี</string>
+    <string name="Color_Thai">สี</string>
+    <string name="Language_Thai">ภาษา</string>
+    <string name="About_Thai">เกี่ยวกับเรา</string>
+    <string name="NewPost_Thai">เมื่อมีโพสต์ใหม่</string>
+    <string name="ScheduleUpdate_Thai">เมื่อตารางมีการเปลี่ยนแปลง</string>
+    <string name="Logout_Thai">ออกจากระบบ</string>
+    <string name="Notification_Thai">การแจ้งเตือน</string>
+    <string name="Theme_Thai">ธีม</string>
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
