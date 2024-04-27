@@ -11,7 +11,11 @@
     <Button
         android:id="@+id/buttonColor4"
         android:layout_width="30dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:strokeColor="#b5b5b5"
+        app:strokeWidth="3dp"
         android:layout_marginStart="208dp"
         android:drawablePadding="0dp"
         android:includeFontPadding="false"
@@ -36,7 +40,11 @@
     <Button
         android:id="@+id/buttonColor3"
         android:layout_width="30dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:strokeColor="#b5b5b5"
+        app:strokeWidth="3dp"
         android:layout_marginStart="168dp"
         android:drawablePadding="0dp"
         android:includeFontPadding="false"
@@ -61,10 +69,12 @@
     <Button
         android:id="@+id/buttonColor2"
         android:layout_width="30dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:layout_marginStart="128dp"
         android:drawablePadding="0dp"
         android:includeFontPadding="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         android:padding="0dp"
         android:paddingStart="0dp"
         android:paddingLeft="0dp"
@@ -76,20 +86,23 @@
         app:cornerRadius="30dp"
         app:flow_horizontalAlign="center"
         app:flow_verticalAlign="center"
-        app:iconPadding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.218"
-        app:layout_marginBaseline="0dp" />
+        app:layout_marginBaseline="0dp"
+        app:strokeColor="#b5b5b5"
+        app:strokeWidth="3dp" />
 
     <Button
         android:id="@+id/buttonColor1"
         android:layout_width="30dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:layout_marginStart="88dp"
         android:drawablePadding="0dp"
         android:includeFontPadding="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         android:padding="0dp"
         android:paddingStart="0dp"
         android:paddingLeft="0dp"
@@ -106,7 +119,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.218"
-        app:layout_marginBaseline="0dp" />
+        app:layout_marginBaseline="0dp"
+        app:strokeColor="#b5b5b5"
+        app:strokeWidth="3dp" />
 
     <TextView
         android:id="@+id/textSetting"
@@ -130,14 +145,32 @@
     <!-- int only? -->
     <!-- for setting the selected color to the new value -->
 
+    <Button
+        android:id="@+id/buttonResetColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="113dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Reset Color"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonNewColor"
+        app:layout_constraintTop_toBottomOf="@+id/divider1"
+        app:layout_constraintVertical_bias="0.081"
+        app:strokeColor="#b5b5b5"
+        app:strokeWidth="3dp" />
+
     <EditText
         android:id="@+id/edittextRed"
         android:layout_width="37dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="108dp"
+        android:background="#b5b5b5"
         android:inputType="phone"
-        android:text="0"
+        android:hint="R"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
@@ -146,9 +179,10 @@
         android:layout_width="37dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="108dp"
+        android:background="#b5b5b5"
         android:inputType="phone"
-        android:text="0"
+        android:hint="G"
         app:layout_constraintStart_toEndOf="@+id/edittextRed"
         app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
@@ -157,9 +191,10 @@
         android:layout_width="37dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="108dp"
+        android:background="#b5b5b5"
         android:inputType="phone"
-        android:text="0"
+        android:hint="B"
         app:layout_constraintStart_toEndOf="@+id/edittextGreen"
         app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
@@ -167,24 +202,18 @@
         android:id="@+id/buttonNewColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="113dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
         android:text="Set Color"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edittextBlue"
-        app:layout_constraintTop_toBottomOf="@+id/divider1"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/testButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="256dp"
-        android:text="Test Button"
+        app:iconPadding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintTop_toBottomOf="@+id/divider1"
+        app:layout_constraintVertical_bias="0.081"
+        app:strokeColor="#b5b5b5"
+        app:strokeWidth="3dp" />
 
     <TextView
         android:id="@+id/textColor"
@@ -199,79 +228,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.214" />
 
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="wrap_content"
-        android:layout_height="5dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
-
-    <View
-        android:id="@+id/divider3"
-        android:layout_width="wrap_content"
-        android:layout_height="5dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.476" />
-
-    <Button
-        android:id="@+id/buttonLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833" />
-
-    <Switch
-        android:id="@+id/switchPost"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="New post"
-        android:textAlignment="textStart"
-        android:textColor="#407c87"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58"
-        tools:checked="false" />
-
-    <View
-        android:id="@+id/divider5"
-        android:layout_width="wrap_content"
-        android:layout_height="5dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.764" />
-
-    <View
-        android:id="@+id/divider4"
-        android:layout_width="wrap_content"
-        android:layout_height="5dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.669" />
-
     <Button
         android:id="@+id/buttonAbout"
         android:layout_width="wrap_content"
@@ -282,32 +238,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
-
-    <Switch
-        android:id="@+id/switchSchedule"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Schedule update"
-        android:textColor="#407c87"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.639" />
-
-    <TextView
-        android:id="@+id/textNotification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Notification"
-        android:textColor="#407c87"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.515" />
+        app:layout_constraintVertical_bias="0.748" />
 
     <TextView
         android:id="@+id/textLanguage"
@@ -320,7 +251,105 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.433" />
+        app:layout_constraintVertical_bias="0.45" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.493" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <Switch
+        android:id="@+id/switchPost"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="New post"
+        android:textAlignment="textStart"
+        android:textColor="#407c87"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.596"
+        tools:checked="false" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.685" />
+
+    <TextView
+        android:id="@+id/textNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Notification"
+        android:textColor="#407c87"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532" />
+
+    <Switch
+        android:id="@+id/switchSchedule"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Schedule update"
+        android:textColor="#407c87"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656" />
 
     <TextView
         android:id="@+id/textTheme"
@@ -346,12 +375,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.118" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navBar"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="2dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

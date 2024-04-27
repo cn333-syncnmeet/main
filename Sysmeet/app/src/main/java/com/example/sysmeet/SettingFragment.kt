@@ -24,6 +24,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat.startActivity
 //import androidx.datastore.core.DataStore
@@ -56,6 +57,7 @@ class SettingFragment : Fragment() {
     private lateinit var buttonColor3: Button
     private lateinit var buttonColor4: Button
     private lateinit var buttonNewColor: Button
+    private lateinit var buttonResetColor: Button
     //text
     private lateinit var textSetting: TextView
     private lateinit var textTheme: TextView
@@ -79,6 +81,10 @@ class SettingFragment : Fragment() {
     private var newGreen = 0
     private var newBlue = 0
     private var newColor = Color.rgb(newRed, newGreen, newBlue)
+    private var redText = "0"
+    private var greenText = "0"
+    private var blueText = "0"
+
     //get prefs
     //private var preferences:SharedPreferences = getSharedPreferences("settingPrefs", MODE_PRIVATE)
     //private var editor:SharedPreferences.Editor = preferences.edit()
@@ -113,13 +119,6 @@ class SettingFragment : Fragment() {
         //set language
         setLanguage()
 
-        testButton = root.findViewById(R.id.testButton)
-        testButton.setOnClickListener {
-            val preferences: SharedPreferences = requireContext().getSharedPreferences("settingPrefs", MODE_PRIVATE)
-            val editor: SharedPreferences.Editor = preferences.edit()
-            editor.putInt("color1", Color.RED)
-            editor.apply()
-        }
 
         // Set onClickListener for buttonLogout
         buttonLogout.setOnClickListener {
@@ -127,6 +126,9 @@ class SettingFragment : Fragment() {
             startActivity(settingToLogoutIntent)
             requireActivity().finish() // ปิด Activity ปัจจุบันหลังจากเปิด Activity ใหม่
         }
+
+        // Set onClickListener for buttonLogout
+
 
         //get the RGB edittext
         // edittextRed = findViewById(R.id.edittextRed)
@@ -220,26 +222,36 @@ class SettingFragment : Fragment() {
 //                updateNewColor()
 //            }
 //        }
-
+        //toast for selecting color
+//        val duration = Toast.LENGTH_SHORT
+        val duration = 0
+        val toastColor1 = Toast.makeText(context, "Color1 selected", duration)
+        val toastColor2 = Toast.makeText(context, "Color2 selected", duration)
+        val toastColor3 = Toast.makeText(context, "Color3 selected", duration)
+        val toastColor4 = Toast.makeText(context, "Color4 selected", duration)
         //select color to change
         var selectedColor = 0
         buttonColor1.setOnClickListener {
             selectedColor = 1
+            toastColor1.show()
             //add border?
-            // buttonColor1.background = ContextCompact.getDrawable(this, R.drawable.drawableName)
+            buttonColor1
         }
         buttonColor2.setOnClickListener {
             selectedColor = 2
+            toastColor2.show()
             //add border?
             // buttonColor1.background = ContextCompact.getDrawable(this, R.drawable.drawableName)
         }
         buttonColor3.setOnClickListener {
             selectedColor = 3
+            toastColor3.show()
             //add border?
             // buttonColor1.background = ContextCompact.getDrawable(this, R.drawable.drawableName)
         }
         buttonColor4.setOnClickListener {
             selectedColor = 4
+            toastColor4.show()
             //add border?
             // buttonColor1.background = ContextCompact.getDrawable(this, R.drawable.drawableName)
         }
@@ -259,6 +271,21 @@ class SettingFragment : Fragment() {
             editor.apply()
             setColor()
         }
+
+        //reset color to default value
+        buttonResetColor.setOnClickListener {
+            val preferences: SharedPreferences = requireContext().getSharedPreferences("settingPrefs", MODE_PRIVATE)
+            val editor: SharedPreferences.Editor = preferences.edit()
+            // change the selected color: which one?
+            editor.putInt("color1", Color.rgb(64, 124, 135))
+            editor.putInt("color2", Color.rgb(165, 219, 221))
+            editor.putInt("color3", Color.rgb(238, 241, 246))
+            editor.putInt("color4", Color.rgb(211, 225, 226))
+
+            editor.apply()
+            setColor()
+        }
+
 
         return root
     }
@@ -284,9 +311,10 @@ class SettingFragment : Fragment() {
         buttonColor3 = root.findViewById(R.id.buttonColor3)
         buttonColor4 = root.findViewById(R.id.buttonColor4)
         buttonNewColor = root.findViewById(R.id.buttonNewColor)
-        edittextRed = root.findViewById((R.id.edittextRed))
-        edittextGreen = root.findViewById((R.id.edittextGreen))
-        edittextBlue = root.findViewById((R.id.edittextBlue))
+        buttonResetColor = root.findViewById(R.id.buttonResetColor)
+        edittextRed = root.findViewById(R.id.edittextRed)
+        edittextGreen = root.findViewById(R.id.edittextGreen)
+        edittextBlue = root.findViewById(R.id.edittextBlue)
     }
 
     fun setColor() {
@@ -305,43 +333,27 @@ class SettingFragment : Fragment() {
         //view = findViewById(R.id.main)
         view.setBackgroundColor(color4) //use this function for all element? (button, divider, etc.)
 
-        // divider1 = findViewById(R.id.divider1)
         divider1.setBackgroundColor(color1)
-        // divider2 = findViewById(R.id.divider2)
         divider2.setBackgroundColor(color1)
-        // divider3 = findViewById(R.id.divider3)
         divider3.setBackgroundColor(color1)
-        // divider4 = findViewById(R.id.divider4)
         divider4.setBackgroundColor(color1)
-        // divider5 = findViewById(R.id.divider5)
         divider5.setBackgroundColor(color1)
 
-        // textSetting = findViewById(R.id.textSetting)
         textSetting.setTextColor(color1)
-        // textTheme = findViewById(R.id.textTheme)
         textTheme.setTextColor(color1)
-        // textColor = findViewById(R.id.textColor)
         textColor.setTextColor(color1)
-        // textLanguage = findViewById(R.id.textLanguage)
         textLanguage.setTextColor(color1)
-        // textNotification = findViewById(R.id.textNotification)
         textNotification.setTextColor(color1)
 
-        // switchPost = findViewById(R.id.switchPost)
         switchPost.setTextColor(color1)
-        // switchSchedule = findViewById(R.id.switchSchedule)
         switchSchedule.setTextColor(color1)
 
-        // buttonAbout = findViewById(R.id.buttonAbout)
         buttonAbout.setBackgroundColor(color2)
         buttonAbout.setTextColor(color1)
-        // buttonLogout = findViewById(R.id.buttonLogout)
         buttonLogout.setBackgroundColor(Color.RED)
-        // buttonColor1 = findViewById(R.id.buttonColor1)
+        buttonResetColor.setBackgroundColor(Color.RED)
         buttonColor1.setBackgroundColor(color1)
-        // buttonColor2 = findViewById(R.id.buttonColor2)
         buttonColor2.setBackgroundColor(color2)
-        // buttonColor3 = findViewById(R.id.buttonColor3)
         buttonColor3.setBackgroundColor(color3)
         buttonColor4.setBackgroundColor(color4)
 
@@ -379,9 +391,21 @@ class SettingFragment : Fragment() {
     }
 
     fun updateNewColor() {
-        newRed = Integer.parseInt(edittextRed.getText().toString())
-        newGreen = Integer.parseInt(edittextGreen.getText().toString())
-        newBlue = Integer.parseInt(edittextBlue.getText().toString())
+        newRed = 0
+        newGreen = 0
+        newBlue = 0
+        redText = edittextRed.getText().toString()
+        if (redText != "") {
+            newRed = Integer.parseInt(redText)
+        }
+        greenText = edittextGreen.getText().toString()
+        if (greenText != "") {
+            newGreen = Integer.parseInt(greenText)
+        }
+        blueText = edittextBlue.getText().toString()
+        if (blueText != "") {
+            newBlue = Integer.parseInt(blueText)
+        }
         newColor = Color.rgb(newRed, newGreen, newBlue)
         buttonNewColor.setBackgroundColor(newColor)
     }
