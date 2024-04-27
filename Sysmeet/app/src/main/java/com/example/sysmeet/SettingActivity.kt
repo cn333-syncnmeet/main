@@ -5,8 +5,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
-import android.preference.PreferenceActivity
-import android.preference.PreferenceManager
 import android.text.Editable
 import android.view.View
 import android.widget.Button
@@ -22,14 +20,10 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.datastore.core.DataStore
-import androidx.datastore.dataStore
 import androidx.datastore.preferences.preferencesDataStore
 import java.lang.Integer
 import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.intPreferencesKey
-import kotlinx.coroutines.flow.Flow
 //import kotlinx.coroutines.flow.internal.NoOpContinuation.context
-import kotlinx.coroutines.flow.map
 
 //private val Context.dataStore by dataStore(
 //    fileName = "user_preferences",
@@ -258,7 +252,7 @@ class SettingActivity : AppCompatActivity() {
         divider3 = findViewById(R.id.divider3)
         divider4 = findViewById(R.id.divider4)
         divider5 = findViewById(R.id.divider5)
-        textSetting = findViewById(R.id.textSetting)
+        textSetting = findViewById(R.id.textAbout)
         textTheme = findViewById(R.id.textTheme)
         textColor = findViewById(R.id.textColor)
         textLanguage = findViewById(R.id.textLanguage)

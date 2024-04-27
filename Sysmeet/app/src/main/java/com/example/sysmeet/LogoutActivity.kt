@@ -39,8 +39,9 @@ class LogoutActivity : AppCompatActivity() {
         buttonReturn = findViewById(R.id.buttonReturn)
         buttonReturn.setOnClickListener {
             //go to setting page
-            val logoutToSettingIntent = Intent(this, SettingFragment::class.java)
-            startActivity(logoutToSettingIntent)
+//            val logoutToSettingIntent = Intent(this, SettingFragment::class.java)
+//            startActivity(logoutToSettingIntent)
+            finish()
         }
     }
 }

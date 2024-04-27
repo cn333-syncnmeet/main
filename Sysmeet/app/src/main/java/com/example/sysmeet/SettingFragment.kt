@@ -1,20 +1,15 @@
 package com.example.sysmeet
 
-import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
-import android.preference.PreferenceActivity
-import android.preference.PreferenceManager
 import android.text.Editable
 import android.view.View
 import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 //for changing color
@@ -25,8 +20,6 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat.startActivity
 //import androidx.datastore.core.DataStore
 //import androidx.datastore.dataStore
 //import androidx.datastore.preferences.preferencesDataStore
@@ -34,7 +27,6 @@ import java.lang.Integer
 //import androidx.datastore.preferences.core.Preferences
 //import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.fragment.app.Fragment
-import kotlinx.coroutines.flow.Flow
 //import kotlinx.coroutines.flow.internal.NoOpContinuation.context
 import kotlinx.coroutines.flow.map
 
@@ -124,11 +116,15 @@ class SettingFragment : Fragment() {
         buttonLogout.setOnClickListener {
             val settingToLogoutIntent = Intent(requireActivity(), LogoutActivity::class.java)
             startActivity(settingToLogoutIntent)
-            requireActivity().finish() // ปิด Activity ปัจจุบันหลังจากเปิด Activity ใหม่
+            //requireActivity().finish() // ปิด Activity ปัจจุบันหลังจากเปิด Activity ใหม่
         }
 
         // Set onClickListener for buttonLogout
-
+        buttonAbout.setOnClickListener {
+            val settingToAboutIntent = Intent(requireActivity(), AboutActivity::class.java)
+            startActivity(settingToAboutIntent)
+            //requireActivity().finish() // ปิด Activity ปัจจุบันหลังจากเปิด Activity ใหม่
+        }
 
         //get the RGB edittext
         // edittextRed = findViewById(R.id.edittextRed)
