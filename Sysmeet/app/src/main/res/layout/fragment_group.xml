@@ -68,6 +68,7 @@
         app:tint="@color/black" />
 
     <View
+        android:id="@+id/groupList"
         android:layout_width="75dp"
         android:layout_height="match_parent"
         android:background="@color/B1" />
@@ -79,5 +80,25 @@
         android:layout_marginStart="12.5dp"
         android:layout_marginTop="75dp"
         android:background="@color/B2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Group_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="150dp"
+        android:backgroundTint="@color/B2"
+        app:tint="@color/black" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Group_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="225dp"
+        android:backgroundTint="@color/B2"
+        app:tint="@color/black" />
 
 </FrameLayout>

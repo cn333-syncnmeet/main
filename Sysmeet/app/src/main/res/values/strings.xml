@@ -97,5 +97,8 @@
         <item>Female</item>
         <item>Other</item>
     </string-array>
+    <string name="title_activity_group_create">GroupCreateActivity</string>
+    <string name="title_activity_send_acitvity">SendAcitvity</string>
+    <string name="title_activity_send">SendActivity</string>
 
 </resources>
