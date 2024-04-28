@@ -1,18 +1,26 @@
 package com.example.sysmeet
 
 import android.os.Bundle
-
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
-
-import androidx.appcompat.app.AppCompatActivity
-
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.sysmeet.databinding.ActivitySendBinding
+import com.example.sysmeet.ui.theme.SysmeetTheme
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-import com.example.sysmeet.databinding.ActivitySendBinding
-
-class SendActivity : AppCompatActivity() {
+class AddMemberActivity : ComponentActivity() {
 
     private lateinit var binding: ActivitySendBinding
     private lateinit var database: DatabaseReference
@@ -32,36 +40,37 @@ class SendActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         // Get data from intent
-        val groupChat = intent.getStringExtra("groupChat")
+        val member = intent.getStringExtra("addMember")
         val currentUser = firebaseAuth.currentUser
         val groupName = intent.getStringExtra("groupName")
 
 
-        sendMessageToFirebase(groupChat, currentUser!!.uid, groupName)
+        addMember(member, currentUser!!.uid, groupName)
     }
 
-    private fun sendMessageToFirebase(message: String?, user: String?, groupName: String?) {
+    private fun addMember(member: String?, user: String?, groupName: String?) {
         // Check if any of the required data is null
-        if (message.isNullOrEmpty() || user.isNullOrEmpty() || groupName.isNullOrEmpty()) {
+        Log.d("TAG", "member: $member, user: $user, groupName: $groupName")
+
+        if (member.isNullOrEmpty() || user.isNullOrEmpty() || groupName.isNullOrEmpty()) {
             // Handle the error
-            Toast.makeText(this, "Chat send error", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Add Member error", Toast.LENGTH_SHORT).show()
             return
         }
 
         // Create a unique key for the message
-        val messageKey = database.child("Groups").child(groupName!!).push().key
+        val memberKey = database.child("Groups").child(groupName!!).push().key
 
         // Create a HashMap to store the message details
         val messageDetails = HashMap<String, Any>()
-        messageDetails["message"] = message
-        messageDetails["userId"] = user
+        messageDetails["userMember"] = member
 
         // Push the message to the Firebase Realtime Database
-        if (messageKey != null) {
-            database.child("Groups").child(groupName).child("Chat").child(messageKey).setValue(messageDetails)
+        if (memberKey != null) {
+            database.child("Groups").child(groupName).child("Members").child(memberKey).setValue(messageDetails)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this, "Chat send successfully", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Add Members successfully", Toast.LENGTH_SHORT).show()
                         // Finish activity
                         finish()
                     } else {

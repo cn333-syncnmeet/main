@@ -2,10 +2,13 @@ package com.example.sysmeet
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.sysmeet.databinding.FragmentGroupBinding
@@ -27,6 +30,7 @@ class GroupFragment : Fragment() {
 
     private val currentUser: FirebaseUser? = FirebaseAuth.getInstance().currentUser
     private val groupRef: DatabaseReference = FirebaseDatabase.getInstance().reference.child("Groups")
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,7 +57,7 @@ class GroupFragment : Fragment() {
                 R.id.home_menu -> {
 
                     if (binding.textGroup.text != "Group") {
-                        replaceFragment(HomeMenu())
+                        replaceFragment(HomeMenu(), binding.textGroup.text.toString())
                     }
 
 
@@ -62,7 +66,7 @@ class GroupFragment : Fragment() {
                 R.id.schedule_menu -> {
 
                     if (binding.textGroup.text != "Group") {
-                        replaceFragment(ScheduleMenu())
+                        replaceFragment(ScheduleMenu(),binding.textGroup.text.toString())
                     }
 
                     return@setOnNavigationItemSelectedListener true
@@ -70,7 +74,7 @@ class GroupFragment : Fragment() {
                 R.id.members_menu -> {
 
                     if (binding.textGroup.text != "Group") {
-                        replaceFragment(MembersMenu())
+                        replaceFragment(MembersMenu(),binding.textGroup.text.toString())
                     }
                     return@setOnNavigationItemSelectedListener true
                 }
@@ -97,12 +101,15 @@ class GroupFragment : Fragment() {
 
 
         //val groupName = "Test" // ชื่อกลุ่มที่ต้องการตรวจสอบ
-        checkIfUserIsMemberOrAdmin("Test") { isAdmin ->
+        /*checkIfUserIsMemberOrAdmin("Test") { isAdmin ->
             if (isAdmin) {
+                binding.Group1.visibility = View.VISIBLE
                 // ผู้ใช้งานเป็น groupAdmin
                 // ทำสิ่งที่คุณต้องการทำเมื่อผู้ใช้งานเป็น groupAdmin ที่นี่
                 binding.Group1.setOnClickListener {
-                    binding.textGroup.text = "Test" }
+                    binding.textGroup.text = "Test"
+                    replaceFragment(HomeMenu(), binding.textGroup.text.toString())
+                }
             } else {
                 // ผู้ใช้งานไม่ได้เป็น groupAdmin
                 // ทำสิ่งที่คุณต้องการทำเมื่อผู้ใช้งานไม่ได้เป็น groupAdmin ที่นี่
@@ -112,16 +119,81 @@ class GroupFragment : Fragment() {
 
         checkIfUserIsMemberOrAdmin("Test2") { isAdmin ->
             if (isAdmin) {
+                binding.Group2.visibility = View.VISIBLE
                 // ผู้ใช้งานเป็น groupAdmin
                 // ทำสิ่งที่คุณต้องการทำเมื่อผู้ใช้งานเป็น groupAdmin ที่นี่
                 binding.Group2.setOnClickListener {
-                    binding.textGroup.text = "Test2"}
+                    binding.textGroup.text = "Test2"
+                    replaceFragment(HomeMenu(), binding.textGroup.text.toString())
+                }
             } else {
                 // ผู้ใช้งานไม่ได้เป็น groupAdmin
                 // ทำสิ่งที่คุณต้องการทำเมื่อผู้ใช้งานไม่ได้เป็น groupAdmin ที่นี่
                 binding.Group2.visibility = View.GONE
             }
-        }
+        }*/
+
+
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        val currentUser = FirebaseAuth.getInstance().currentUser
+
+        // อ้างอิงไปยัง "Groups" ใน Firebase Database
+        val databaseReference = FirebaseDatabase.getInstance().getReference("Groups")
+
+        // เพิ่ม Listener สำหรับการอ่านข้อมูล
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val groupNames = mutableListOf<String>()
+                var count = 1 // เริ่มต้น count ที่ 1
+
+                // วนลูปเพื่อดึงข้อมูลจากทุกๆ child ใน "Groups"
+                for (groupSnapshot in dataSnapshot.children) {
+                    // อ่านค่าของ message จาก child นั้น ๆ
+
+                    if (groupSnapshot.hasChildren()) {
+                        // อ่านชื่อของ child นั้น ๆ แล้วเก็บไว้ในรายการ
+                        groupNames.add(groupSnapshot.key!!)
+                        val groupName = groupSnapshot.key!!
+                    }
+
+                    val groupName = groupSnapshot.key!!
+
+                    checkIfUserIsMemberOrAdmin(groupName.toString()) { isAdmin ->
+                        if (isAdmin) {
+                            val groupCount = "Group_$count"
+
+                            // หา ID ของอ็อบเจกต์โดยใช้ชื่อ
+
+                            val resourceId = requireActivity().findViewById<View>(
+                                resources.getIdentifier(
+                                    groupCount,
+                                    "id",
+                                    requireContext().packageName
+                                )
+                            )
+                            resourceId.visibility = View.VISIBLE
+
+
+                            resourceId.setOnClickListener {
+                                binding.textGroup.text = groupName.toString()
+                                replaceFragment(HomeMenu(), binding.textGroup.text.toString())
+                            }
+
+                            count++
+
+                        }
+                    }
+
+                }
+
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // การดึงข้อมูลล้มเหลว
+                Log.e("HomeMenu", "Failed to read value.", databaseError.toException())
+            }
+        })
 
 
     }
@@ -140,8 +212,13 @@ class GroupFragment : Fragment() {
         _binding = null
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: Fragment, textGroup: String) {
         val transaction: FragmentTransaction = childFragmentManager.beginTransaction()
+        // ส่งข้อมูล textGroup ไปให้ Fragment ใหม่ที่จะถูกเปลี่ยนแทนที่ปัจจุบันด้วย bundle
+        val bundle = Bundle().apply {
+            putString("textGroup", textGroup)
+        }
+        fragment.arguments = bundle
         transaction.replace(binding.menuContainer.id, fragment)
         transaction.commit()
     }
@@ -160,7 +237,7 @@ class GroupFragment : Fragment() {
 
         // เข้าถึง Firebase Database เพื่อตรวจสอบสถานะของผู้ใช้งานในกลุ่ม
         val database = FirebaseDatabase.getInstance()
-        val groupsRef = database.getReference("Groups")
+        val groupsRef = database.getReference("Groups").child(groupName).child("Admin")
 
         // ดึงข้อมูลของกลุ่มที่ระบุจาก Realtime Database
         val query = groupsRef.orderByChild("groupName").equalTo(groupName)
@@ -172,7 +249,6 @@ class GroupFragment : Fragment() {
                         val group = snapshot.getValue(Group::class.java)
                         // ตรวจสอบว่า currentUser เป็น groupAdmin หรือไม่
                         if (currentUser != null && group != null && group.groupAdmin == currentUser.uid) {
-                            // currentUser เป็น groupAdmin
                             callback(true)
                             return
                         }

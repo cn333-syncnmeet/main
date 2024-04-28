@@ -44,7 +44,6 @@ class GroupCreateActivity : AppCompatActivity() {
         firebaseDatabase = FirebaseDatabase.getInstance()
 
         // Find views
-        createGroupButton = findViewById(R.id.createGroupButton)
 
         // Set click listener for create group button
         createGroupButton.setOnClickListener {
@@ -55,7 +54,7 @@ class GroupCreateActivity : AppCompatActivity() {
     private fun createGroup() {
         val currentUser = firebaseAuth.currentUser
         val groupName = groupNameEditText.text.toString()
-        val groupRef = firebaseDatabase.reference.child("Groups").push()
+        val groupRef = firebaseDatabase.reference.child("Groups").child(groupName).child("Admin").push()
 
         // Check if user is signed in
         if (currentUser != null) {
@@ -65,22 +64,8 @@ class GroupCreateActivity : AppCompatActivity() {
                 "groupAdmin" to currentUser.uid
             )
             groupRef.setValue(groupData)
-                .addOnSuccessListener {
-                    // Group created successfully, navigate to GroupFragment with group name
-                    val fragment = GroupFragment()
-                    val bundle = Bundle()
-                    bundle.putString("groupName", groupName)
-                    fragment.arguments = bundle
-
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit()
-                }
-                .addOnFailureListener { exception ->
-                    // Handle errors
-                }
+            finish()
         }
         // Add group name to GroupList
-        groupList.add(groupName)
     }
 }

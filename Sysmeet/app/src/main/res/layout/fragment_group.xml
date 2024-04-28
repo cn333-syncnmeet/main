@@ -89,7 +89,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="150dp"
         android:backgroundTint="@color/B2"
-        app:tint="@color/black" />
+        app:tint="@color/black"
+        android:visibility="gone"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Group_2"
@@ -99,6 +100,29 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="225dp"
         android:backgroundTint="@color/B2"
-        app:tint="@color/black" />
+        app:tint="@color/black"
+        android:visibility="gone"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Group_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="300dp"
+        android:backgroundTint="@color/B2"
+        app:tint="@color/black"
+        android:visibility="gone"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Group_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="375dp"
+        android:backgroundTint="@color/B2"
+        app:tint="@color/black"
+        android:visibility="gone"/>
 
 </FrameLayout>

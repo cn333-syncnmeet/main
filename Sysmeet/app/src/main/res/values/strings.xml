@@ -100,5 +100,6 @@
     <string name="title_activity_group_create">GroupCreateActivity</string>
     <string name="title_activity_send_acitvity">SendAcitvity</string>
     <string name="title_activity_send">SendActivity</string>
+    <string name="title_activity_add_member">AddMemberActivity</string>
 
 </resources>
