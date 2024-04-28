@@ -15,10 +15,7 @@
         <activity
             android:name=".AboutActivity"
             android:exported="false" />
-        <!-- from net -->
-        <activity
-            android:name=".SettingActivity"
-            android:exported="false" /> <!-- from P -->
+        <!-- from net --> <!-- from P -->
         <activity
             android:name=".Upload_Profile_Activity"
             android:exported="false"

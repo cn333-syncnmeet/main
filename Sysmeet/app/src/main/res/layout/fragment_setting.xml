@@ -6,136 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingActivity">
-
-    <Button
-        android:id="@+id/buttonColor4"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:strokeColor="#b5b5b5"
-        app:strokeWidth="3dp"
-        android:layout_marginStart="208dp"
-        android:drawablePadding="0dp"
-        android:includeFontPadding="false"
-        android:padding="0dp"
-        android:paddingStart="0dp"
-        android:paddingLeft="0dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="0dp"
-        app:barrierMargin="0dp"
-        app:cornerRadius="30dp"
-        app:flow_horizontalAlign="center"
-        app:flow_verticalAlign="center"
-        app:iconPadding="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218"
-        app:layout_marginBaseline="0dp" />
-
-    <Button
-        android:id="@+id/buttonColor3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:strokeColor="#b5b5b5"
-        app:strokeWidth="3dp"
-        android:layout_marginStart="168dp"
-        android:drawablePadding="0dp"
-        android:includeFontPadding="false"
-        android:padding="0dp"
-        android:paddingStart="0dp"
-        android:paddingLeft="0dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="0dp"
-        app:barrierMargin="0dp"
-        app:cornerRadius="30dp"
-        app:flow_horizontalAlign="center"
-        app:flow_verticalAlign="center"
-        app:iconPadding="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218"
-        app:layout_marginBaseline="0dp" />
-
-    <Button
-        android:id="@+id/buttonColor2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="128dp"
-        android:drawablePadding="0dp"
-        android:includeFontPadding="false"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:padding="0dp"
-        android:paddingStart="0dp"
-        android:paddingLeft="0dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="0dp"
-        app:barrierMargin="0dp"
-        app:cornerRadius="30dp"
-        app:flow_horizontalAlign="center"
-        app:flow_verticalAlign="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218"
-        app:layout_marginBaseline="0dp"
-        app:strokeColor="#b5b5b5"
-        app:strokeWidth="3dp" />
-
-    <Button
-        android:id="@+id/buttonColor1"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="88dp"
-        android:drawablePadding="0dp"
-        android:includeFontPadding="false"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:padding="0dp"
-        android:paddingStart="0dp"
-        android:paddingLeft="0dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="0dp"
-        app:barrierMargin="0dp"
-        app:cornerRadius="30dp"
-        app:flow_horizontalAlign="center"
-        app:flow_verticalAlign="center"
-        app:iconPadding="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218"
-        app:layout_marginBaseline="0dp"
-        app:strokeColor="#b5b5b5"
-        app:strokeWidth="3dp" />
-
-    <TextView
-        android:id="@+id/textSetting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Setting"
-        android:textColor="#407c87"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+    tools:context=".SettingFragment">
 
     <!-- for entering new color"s RGB values -->
     <!-- int only? -->
@@ -146,19 +17,141 @@
     <!-- for setting the selected color to the new value -->
 
     <Button
+        android:id="@+id/buttonColor4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:drawablePadding="0dp"
+        android:includeFontPadding="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp"
+        app:barrierMargin="0dp"
+        app:cornerRadius="30dp"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:iconPadding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/buttonColor3"
+        app:layout_constraintTop_toBottomOf="@+id/textTheme"
+        app:layout_marginBaseline="0dp"
+        app:strokeColor="#b5b5b5"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/buttonColor3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:drawablePadding="0dp"
+        android:includeFontPadding="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp"
+        app:barrierMargin="0dp"
+        app:cornerRadius="30dp"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:iconPadding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/buttonColor2"
+        app:layout_constraintTop_toBottomOf="@+id/textTheme"
+        app:layout_marginBaseline="0dp"
+        app:strokeColor="#b5b5b5"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/buttonColor2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:drawablePadding="0dp"
+        android:includeFontPadding="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp"
+        app:barrierMargin="0dp"
+        app:cornerRadius="30dp"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:layout_constraintStart_toEndOf="@+id/buttonColor1"
+        app:layout_constraintTop_toBottomOf="@+id/textTheme"
+        app:layout_marginBaseline="0dp"
+        app:strokeColor="#b5b5b5"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/buttonColor1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:drawablePadding="0dp"
+        android:includeFontPadding="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp"
+        app:barrierMargin="0dp"
+        app:cornerRadius="30dp"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:iconPadding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/textColor"
+        app:layout_constraintTop_toBottomOf="@+id/textTheme"
+        app:layout_marginBaseline="0dp"
+        app:strokeColor="#b5b5b5"
+        app:strokeWidth="3dp" />
+
+    <TextView
+        android:id="@+id/textSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/Setting_English"
+        android:textColor="#407c87"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/buttonResetColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="113dp"
+        android:layout_marginTop="12dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="Reset Color"
+        android:text="@string/reset_color"
         app:iconPadding="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonNewColor"
-        app:layout_constraintTop_toBottomOf="@+id/divider1"
-        app:layout_constraintVertical_bias="0.081"
+        app:layout_constraintTop_toBottomOf="@+id/edittextRed"
         app:strokeColor="#b5b5b5"
         app:strokeWidth="3dp" />
 
@@ -167,51 +160,52 @@
         android:layout_width="37dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="12dp"
         android:background="#b5b5b5"
+        android:hint="@string/r"
+        android:autofillHints="color value"
         android:inputType="phone"
-        android:hint="R"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonColor1" />
 
     <EditText
         android:id="@+id/edittextGreen"
         android:layout_width="37dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
         android:background="#b5b5b5"
+        android:hint="@string/g"
+        android:autofillHints="color value"
         android:inputType="phone"
-        android:hint="G"
         app:layout_constraintStart_toEndOf="@+id/edittextRed"
-        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonColor1" />
 
     <EditText
         android:id="@+id/edittextBlue"
         android:layout_width="37dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
         android:background="#b5b5b5"
+        android:hint="@string/b"
+        android:autofillHints="color value"
         android:inputType="phone"
-        android:hint="B"
         app:layout_constraintStart_toEndOf="@+id/edittextGreen"
-        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonColor1" />
 
     <Button
         android:id="@+id/buttonNewColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="113dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
         android:paddingLeft="3dp"
         android:paddingRight="3dp"
-        android:text="Set Color"
+        android:text="@string/set_color"
         app:iconPadding="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider1"
-        app:layout_constraintVertical_bias="0.081"
+        app:layout_constraintTop_toBottomOf="@+id/edittextRed"
         app:strokeColor="#b5b5b5"
         app:strokeWidth="3dp" />
 
@@ -220,444 +214,147 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="Color"
+        android:layout_marginTop="15.75dp"
+        android:text="@string/Color_English"
         android:textColor="#407c87"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.214" />
+        app:layout_constraintTop_toBottomOf="@+id/textTheme" />
 
     <Button
         android:id="@+id/buttonAbout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="About"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/About_English"
         android:textColor="#407c87"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.748" />
+        app:layout_constraintTop_toBottomOf="@+id/divider5" />
 
     <TextView
         android:id="@+id/textLanguage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="Language"
+        android:layout_marginTop="12dp"
+        android:text="@string/Language_English"
         android:textColor="#407c87"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <View
         android:id="@+id/divider2"
         android:layout_width="wrap_content"
         android:layout_height="5dp"
+        android:layout_marginTop="12dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.417" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonNewColor" />
 
     <View
         android:id="@+id/divider3"
         android:layout_width="wrap_content"
         android:layout_height="5dp"
+        android:layout_marginTop="12dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.493" />
+        app:layout_constraintTop_toBottomOf="@+id/textLanguage" />
 
     <Button
         android:id="@+id/buttonLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/Logout_English"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAbout" />
 
     <Switch
         android:id="@+id/switchPost"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="New post"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/NewPost_English"
         android:textAlignment="textStart"
         android:textColor="#407c87"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596"
+        app:layout_constraintTop_toBottomOf="@+id/textNotification"
         tools:checked="false" />
 
     <View
         android:id="@+id/divider5"
         android:layout_width="wrap_content"
         android:layout_height="5dp"
+        android:layout_marginTop="12dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78" />
+        app:layout_constraintTop_toBottomOf="@+id/switchSchedule" />
 
     <View
         android:id="@+id/divider4"
         android:layout_width="wrap_content"
         android:layout_height="5dp"
+        android:layout_marginTop="12dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogout" />
 
     <TextView
         android:id="@+id/textNotification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="Notification"
+        android:layout_marginTop="12dp"
+        android:text="@string/Notification_English"
         android:textColor="#407c87"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.532" />
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
     <Switch
         android:id="@+id/switchSchedule"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Schedule update"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/ScheduleUpdate_English"
         android:textColor="#407c87"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.656" />
+        app:layout_constraintTop_toBottomOf="@+id/switchPost" />
 
     <TextView
         android:id="@+id/textTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:text="Theme"
+        android:layout_marginTop="12dp"
+        android:text="@string/Theme_English"
         android:textColor="#407c87"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider1"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
     <View
         android:id="@+id/divider1"
         android:layout_width="wrap_content"
         android:layout_height="5dp"
+        android:layout_marginTop="12dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.118" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/textSetting" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--from P-->
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:id="@+id/main"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    tools:context=".SettingFragment">-->
-
-<!--    <Button-->
-<!--        android:id="@+id/buttonColor3"-->
-<!--        android:layout_width="30dp"-->
-<!--        android:layout_height="35dp"-->
-<!--        android:layout_marginStart="168dp"-->
-<!--        android:drawablePadding="0dp"-->
-<!--        android:includeFontPadding="false"-->
-<!--        android:padding="0dp"-->
-<!--        android:paddingStart="0dp"-->
-<!--        android:paddingLeft="0dp"-->
-<!--        android:paddingTop="0dp"-->
-<!--        android:paddingEnd="0dp"-->
-<!--        android:paddingRight="0dp"-->
-<!--        android:paddingBottom="0dp"-->
-<!--        app:barrierMargin="0dp"-->
-<!--        app:cornerRadius="30dp"-->
-<!--        app:flow_horizontalAlign="center"-->
-<!--        app:flow_verticalAlign="center"-->
-<!--        app:iconPadding="0dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.218"-->
-<!--        app:layout_marginBaseline="0dp" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/buttonColor2"-->
-<!--        android:layout_width="30dp"-->
-<!--        android:layout_height="35dp"-->
-<!--        android:layout_marginStart="128dp"-->
-<!--        android:drawablePadding="0dp"-->
-<!--        android:includeFontPadding="false"-->
-<!--        android:padding="0dp"-->
-<!--        android:paddingStart="0dp"-->
-<!--        android:paddingLeft="0dp"-->
-<!--        android:paddingTop="0dp"-->
-<!--        android:paddingEnd="0dp"-->
-<!--        android:paddingRight="0dp"-->
-<!--        android:paddingBottom="0dp"-->
-<!--        app:barrierMargin="0dp"-->
-<!--        app:cornerRadius="30dp"-->
-<!--        app:flow_horizontalAlign="center"-->
-<!--        app:flow_verticalAlign="center"-->
-<!--        app:iconPadding="0dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.218"-->
-<!--        app:layout_marginBaseline="0dp" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/buttonColor1"-->
-<!--        android:layout_width="30dp"-->
-<!--        android:layout_height="35dp"-->
-<!--        android:layout_marginStart="88dp"-->
-<!--        android:drawablePadding="0dp"-->
-<!--        android:includeFontPadding="false"-->
-<!--        android:padding="0dp"-->
-<!--        android:paddingStart="0dp"-->
-<!--        android:paddingLeft="0dp"-->
-<!--        android:paddingTop="0dp"-->
-<!--        android:paddingEnd="0dp"-->
-<!--        android:paddingRight="0dp"-->
-<!--        android:paddingBottom="0dp"-->
-<!--        app:barrierMargin="0dp"-->
-<!--        app:cornerRadius="30dp"-->
-<!--        app:flow_horizontalAlign="center"-->
-<!--        app:flow_verticalAlign="center"-->
-<!--        app:iconPadding="0dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.218"-->
-<!--        app:layout_marginBaseline="0dp" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textSetting"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Setting"-->
-<!--        android:textColor="#407c87"-->
-<!--        android:textSize="34sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.498"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.023" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/testButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="216dp"-->
-<!--        android:backgroundTint="#407C87"-->
-<!--        android:text="Test Button"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.203" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textColor"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:text="Color"-->
-<!--        android:textColor="#407c87"-->
-<!--        android:textSize="16sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.214" />-->
-
-<!--    <View-->
-<!--        android:id="@+id/divider2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="5dp"-->
-<!--        android:background="?android:attr/listDivider"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.268" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textLanguage"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:text="Language"-->
-<!--        android:textColor="#407c87"-->
-<!--        android:textSize="24sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.296" />-->
-
-<!--    <View-->
-<!--        android:id="@+id/divider3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="5dp"-->
-<!--        android:background="?android:attr/listDivider"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.344" />-->
-
-<!--    <View-->
-<!--        android:id="@+id/divider4"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="5dp"-->
-<!--        android:background="?android:attr/listDivider"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.537" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/buttonAbout"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:text="About"-->
-<!--        android:textColor="#EEF1F6"-->
-<!--        android:backgroundTint="#407C87"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.59" />-->
-
-<!--    <View-->
-<!--        android:id="@+id/divider5"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="5dp"-->
-<!--        android:background="?android:attr/listDivider"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.632" />-->
-
-<!--    <Switch-->
-<!--        android:id="@+id/switchPost"-->
-<!--        android:layout_width="170dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:text="New post"-->
-<!--        android:textAlignment="textStart"-->
-<!--        android:textColor="#407c87"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.444"-->
-<!--        tools:checked="false" />-->
-
-<!--    <Switch-->
-<!--        android:id="@+id/switchSchedule"-->
-<!--        android:layout_width="170dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:text="Schedule update"-->
-<!--        android:textColor="#407c87"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.502" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/buttonLogout"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:text="Logout"-->
-<!--        android:backgroundTint="#FF0000"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.692" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textNotification"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:text="Notification"-->
-<!--        android:textColor="#407c87"-->
-<!--        android:textSize="24sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.377" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textTheme"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:text="Theme"-->
-<!--        android:textColor="#407c87"-->
-<!--        android:textSize="24sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.141" />-->
-
-<!--    <View-->
-<!--        android:id="@+id/divider1"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="5dp"-->
-<!--        android:background="?android:attr/listDivider"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.118" />-->
-
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/navBar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="100dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        tools:layout_editor_absoluteX="2dp" />-->
-
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

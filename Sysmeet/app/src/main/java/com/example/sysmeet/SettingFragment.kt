@@ -20,15 +20,7 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
-//import androidx.datastore.core.DataStore
-//import androidx.datastore.dataStore
-//import androidx.datastore.preferences.preferencesDataStore
-import java.lang.Integer
-//import androidx.datastore.preferences.core.Preferences
-//import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.fragment.app.Fragment
-//import kotlinx.coroutines.flow.internal.NoOpContinuation.context
-import kotlinx.coroutines.flow.map
 
 
 class SettingFragment : Fragment() {
@@ -41,7 +33,6 @@ class SettingFragment : Fragment() {
     private lateinit var divider4: View
     private lateinit var divider5: View
     //button
-    private lateinit var testButton: Button
     private lateinit var buttonAbout: Button
     private lateinit var buttonLogout: Button
     private lateinit var buttonColor1: Button
@@ -77,10 +68,6 @@ class SettingFragment : Fragment() {
     private var greenText = "0"
     private var blueText = "0"
 
-    //get prefs
-    //private var preferences:SharedPreferences = getSharedPreferences("settingPrefs", MODE_PRIVATE)
-    //private var editor:SharedPreferences.Editor = preferences.edit()
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -97,10 +84,6 @@ class SettingFragment : Fragment() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        //get prefs
-        //var preferences:SharedPreferences = this.getActivity().getSharedPreferences("settingPrefs", MODE_PRIVATE)
-        //var editor:SharedPreferences.Editor = preferences.edit()
 
         //get element
         getElement(root)
@@ -127,17 +110,9 @@ class SettingFragment : Fragment() {
         }
 
         //get the RGB edittext
-        // edittextRed = findViewById(R.id.edittextRed)
-        // edittextGreen = findViewById(R.id.edittextGreen)
-        // edittextBlue = findViewById(R.id.edittextBlue)
-        // buttonNewColor = findViewById(R.id.buttonNewColor)
-        // get the new color's RGB values: from edittext
         newRed = 0
         newGreen = 0
         newBlue = 0
-//        newRed = Integer.parseInt(edittextRed.getText().toString())
-//        newGreen = Integer.parseInt(edittextGreen.getText().toString())
-//        newBlue = Integer.parseInt(edittextBlue.getText().toString())
         newColor = Color.rgb(newRed, newGreen, newBlue)
         buttonNewColor.setBackgroundColor(newColor)
 
@@ -192,32 +167,7 @@ class SettingFragment : Fragment() {
         edittextRed.addTextChangedListener(watcherRed)
         edittextGreen.addTextChangedListener(watcherGreen)
         edittextBlue.addTextChangedListener(watcherBlue)
-//        val watcher = object: TextWatcher
-//        edittextRed.addTextChangedListener(watcher) {
-//            @override
-//            public afterTextChanged(Editable editable) {
-//                newRed = editable
-//                //update setColorButton's color
-//                updateNewColor()
-//            }
-//        }
-//        //on any value change
-//        edittextGreen.addTextChangedListener(new TextWatcher) {
-//            @override
-//            public afterTextChanged(Editable editable) {
-//                newGreen = editable
-//                //update setColorButton's color
-//                updateNewColor()
-//            }
-//        }        //on any value change
-//        edittextBlue.addTextChangedListener(new TextWatcher) {
-//            @override
-//            public afterTextChanged(Editable editable) {
-//                newBlue = editable
-//                //update setColorButton's color
-//                updateNewColor()
-//            }
-//        }
+
         //toast for selecting color
 //        val duration = Toast.LENGTH_SHORT
         val duration = 0
@@ -230,26 +180,18 @@ class SettingFragment : Fragment() {
         buttonColor1.setOnClickListener {
             selectedColor = 1
             toastColor1.show()
-            //add border?
-            buttonColor1
         }
         buttonColor2.setOnClickListener {
             selectedColor = 2
             toastColor2.show()
-            //add border?
-            // buttonColor1.background = ContextCompact.getDrawable(this, R.drawable.drawableName)
         }
         buttonColor3.setOnClickListener {
             selectedColor = 3
             toastColor3.show()
-            //add border?
-            // buttonColor1.background = ContextCompact.getDrawable(this, R.drawable.drawableName)
         }
         buttonColor4.setOnClickListener {
             selectedColor = 4
             toastColor4.show()
-            //add border?
-            // buttonColor1.background = ContextCompact.getDrawable(this, R.drawable.drawableName)
         }
 
         //set new color: to do
@@ -313,17 +255,17 @@ class SettingFragment : Fragment() {
         edittextBlue = root.findViewById(R.id.edittextBlue)
     }
 
-    fun setColor() {
+    private fun setColor() {
         //do something similar to this for every page?
 
         //get prefs
-        var preferences:SharedPreferences = requireContext().getSharedPreferences("settingPrefs", MODE_PRIVATE)
+        val preferences:SharedPreferences = requireContext().getSharedPreferences("settingPrefs", MODE_PRIVATE)
 
         //get color
-        var color1 = preferences.getInt("color1", Color.rgb(64, 124, 135)) //dark blue
-        var color2 = preferences.getInt("color2", Color.rgb(165, 219, 221)) // blue
-        var color3 = preferences.getInt("color3", Color.rgb(238, 241, 246)) // white
-        var color4 = preferences.getInt("color4", Color.rgb(211, 225, 226)) // light blue
+        val color1 = preferences.getInt("color1", Color.rgb(64, 124, 135)) //dark blue
+        val color2 = preferences.getInt("color2", Color.rgb(165, 219, 221)) // blue
+        val color3 = preferences.getInt("color3", Color.rgb(238, 241, 246)) // white
+        val color4 = preferences.getInt("color4", Color.rgb(211, 225, 226)) // light blue
 
         //set color
         //view = findViewById(R.id.main)
@@ -355,34 +297,34 @@ class SettingFragment : Fragment() {
 
     }
 
-    fun setLanguage() {
+    private fun setLanguage() {
 
-        var preferences:SharedPreferences = requireContext().getSharedPreferences("settingPrefs", MODE_PRIVATE)
+        val preferences:SharedPreferences = requireContext().getSharedPreferences("settingPrefs", MODE_PRIVATE)
 
-        var language = preferences.getString("language", "english")
+        val language = preferences.getString("language", "english")
 
         if (language == "english") {
-            textSetting.setText(getResources().getString(R.string.Setting_English))
-            textTheme.setText(getString(R.string.Theme_English))
-            textColor.setText(getString(R.string.Color_English))
-            textLanguage.setText(getString(R.string.Language_English))
-            textNotification.setText(getString(R.string.Notification_English))
-            switchPost.setText(getString(R.string.NewPost_English))
-            switchSchedule.setText(getString(R.string.ScheduleUpdate_English))
-            buttonAbout.setText(getString(R.string.About_English))
-            buttonLogout.setText(getString(R.string.Logout_English))
-            buttonNewColor.setText(getString(R.string.SetColor_English))
+            textSetting.text = resources.getString(R.string.Setting_English)
+            textTheme.text = getString(R.string.Theme_English)
+            textColor.text = getString(R.string.Color_English)
+            textLanguage.text = getString(R.string.Language_English)
+            textNotification.text = getString(R.string.Notification_English)
+            switchPost.text = getString(R.string.NewPost_English)
+            switchSchedule.text = getString(R.string.ScheduleUpdate_English)
+            buttonAbout.text = getString(R.string.About_English)
+            buttonLogout.text = getString(R.string.Logout_English)
+            buttonNewColor.text = getString(R.string.SetColor_English)
         } else if (language == "thai") {
-            textSetting.setText(getString(R.string.Setting_Thai))
-            textTheme.setText(getString(R.string.Theme_Thai))
-            textColor.setText(getString(R.string.Color_Thai))
-            textLanguage.setText(getString(R.string.Language_Thai))
-            textNotification.setText(getString(R.string.Notification_Thai))
-            switchPost.setText(getString(R.string.NewPost_Thai))
-            switchSchedule.setText(getString(R.string.ScheduleUpdate_Thai))
-            buttonAbout.setText(getString(R.string.About_Thai))
-            buttonLogout.setText(getString(R.string.Logout_Thai))
-            buttonNewColor.setText(getString(R.string.SetColor_Thai))
+            textSetting.text = getString(R.string.Setting_Thai)
+            textTheme.text = getString(R.string.Theme_Thai)
+            textColor.text = getString(R.string.Color_Thai)
+            textLanguage.text = getString(R.string.Language_Thai)
+            textNotification.text = getString(R.string.Notification_Thai)
+            switchPost.text = getString(R.string.NewPost_Thai)
+            switchSchedule.text = getString(R.string.ScheduleUpdate_Thai)
+            buttonAbout.text = getString(R.string.About_Thai)
+            buttonLogout.text = getString(R.string.Logout_Thai)
+            buttonNewColor.text = getString(R.string.SetColor_Thai)
         }
     }
 

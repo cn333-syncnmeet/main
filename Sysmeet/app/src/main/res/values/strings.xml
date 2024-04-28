@@ -157,6 +157,24 @@
     </string-array>
 
     <string name="title_activity_upload_profile">Upload_Profile_Activity</string>
+    <string name="made_by">Made by</string>
+    <string name="name_6410685058">พีระชัย เกรียงไกรชัยพร 6410685058</string>
+    <string name="name_6410685256">สุวิจักขณ์ แท่นธรรมโรจน์ 6410685256</string>
+    <string name="name_6410685074">กัณจน์ เกิดไธสง 6410685074</string>
+    <string name="name_6410685124">ธนกฤต อิ้ววังโส 6410685124</string>
+    <string name="name_6410615063">ธนากร ทองย้อย 6410615063</string>
+    <string name="syncmeet_is">SyncMeet is an app that help with scheduling</string>
+    <string name="between_you">between you and other people</string>
+    <string name="what_is">What is SyncMeet?</string>
+    <string name="do_you">Do you actually want to logout?</string>
+    <string name="yes_let">Yes, let me out!</string>
+    <string name="no">No, I\'m just kidding</string>
+    <string name="logout">Logout</string>
+    <string name="reset_color">Reset Color</string>
+    <string name="r">R</string>
+    <string name="g">G</string>
+    <string name="b">B</string>
+    <string name="set_color">Set Color</string>
 
     <string-array name="gender">
         <item>Male</item>
