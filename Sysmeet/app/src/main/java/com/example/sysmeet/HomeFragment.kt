@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
         val currentUser = FirebaseAuth.getInstance().currentUser
 
         // อ้างอิงไปยัง "Groups" ใน Firebase Database
-        val databaseReference = FirebaseDatabase.getInstance().getReference(currentUser!!.uid).child("Profile")
+        val databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(currentUser!!.uid).child("Profile")
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {

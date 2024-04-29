@@ -17,8 +17,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.sysmeet.databinding.ActivitySendBinding
 import com.example.sysmeet.ui.theme.SysmeetTheme
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class AddMemberActivity : ComponentActivity() {
 
@@ -44,8 +47,32 @@ class AddMemberActivity : ComponentActivity() {
         val currentUser = firebaseAuth.currentUser
         val groupName = intent.getStringExtra("groupName")
 
+        val databaseReference = FirebaseDatabase.getInstance().getReference("Users")
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-        addMember(member, currentUser!!.uid, groupName)
+                // วนลูปเพื่อดึงข้อมูลจากทุกๆ child ใน "Groups"
+                for (groupSnapshot in dataSnapshot.children) {
+                    val name = groupSnapshot.child("Profile").child("userName")
+                        .getValue(String::class.java)
+
+                    Log.d("TAG_mem", "name: $name, mem: $member")
+
+                    if(name.toString() == member)
+                    {
+                        addMember(member, currentUser!!.uid, groupName)
+                    }
+                }
+
+            }
+            override fun onCancelled(databaseError: DatabaseError) {
+                // การดึงข้อมูลล้มเหลว
+                Log.e("HomeFragment", "Failed to read value.", databaseError.toException())
+            }
+        })
+
+
+
     }
 
     private fun addMember(member: String?, user: String?, groupName: String?) {

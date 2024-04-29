@@ -79,7 +79,7 @@ class EditScheduleActivity : AppCompatActivity() {
         }
 
         val currentUser = FirebaseAuth.getInstance().currentUser
-        val databaseReference = FirebaseDatabase.getInstance().getReference(currentUser!!.uid).child("Schedule")
+        val databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(currentUser!!.uid).child("Schedule")
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -125,6 +125,6 @@ class EditScheduleActivity : AppCompatActivity() {
         dataMap["endTime"] = endTime
 
         // บันทึกข้อมูลลงใน Realtime Database
-        myRef.child(currentUser!!.uid).child("Schedule").push().setValue(dataMap)
+        myRef.child("Users").child(currentUser!!.uid).child("Schedule").push().setValue(dataMap)
     }
 }

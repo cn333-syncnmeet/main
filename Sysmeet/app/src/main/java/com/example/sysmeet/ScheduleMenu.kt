@@ -54,8 +54,7 @@ class ScheduleMenu : Fragment() {
         binding.groupSchedule.text = textGroup
         val groupName = binding.groupSchedule.text.toString()*/
 
-        val databaseReference = FirebaseDatabase.getInstance().getReference(currentUser!!.uid).child("Schedule")
-
+        val databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(currentUser!!.uid).child("Schedule")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 

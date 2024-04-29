@@ -103,7 +103,7 @@ class Upload_Profile_Activity : ComponentActivity() {
         dataMap["userOther"] = userOther
 
         // บันทึกข้อมูลลงใน Realtime Database
-        myRef.child(currentUser!!.uid).child("Profile").push().setValue(dataMap)
+        myRef.child("Users").child(currentUser!!.uid).child("Profile").push().setValue(dataMap)
     }
 
     fun String?.toStringOrNull(): String? {

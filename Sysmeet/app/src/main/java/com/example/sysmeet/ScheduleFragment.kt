@@ -38,7 +38,7 @@ class ScheduleFragment : Fragment() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         val currentUser = FirebaseAuth.getInstance().currentUser
-        val databaseReference = FirebaseDatabase.getInstance().getReference(currentUser!!.uid).child("Schedule")
+        val databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(currentUser!!.uid).child("Schedule")
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
