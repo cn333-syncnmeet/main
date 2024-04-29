@@ -1,5 +1,6 @@
 package com.example.sysmeet
 
+
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.content.SharedPreferences
@@ -131,3 +132,5 @@ class SettingFragment : Fragment() {
         buttonLogout.setBackgroundColor(Color.RED)
     }
 }
+
+    
